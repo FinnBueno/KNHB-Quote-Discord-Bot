@@ -1,4 +1,4 @@
-import { Client, Intents, TextBasedChannels, CommandInteraction } from 'discord.js';
+import { Client, Intents, TextBasedChannels } from 'discord.js';
 
 const channels = [
     { channelId: '835639918868561951', name: 'Amy' },
@@ -9,11 +9,6 @@ const channels = [
     { channelId: '835640103472332811', name: 'Jim' },
     { channelId: '835640135009828884', name: 'Marisa' }
 ];
-
-interface Command {
-    command: { name: string, description: string, options: any[] };
-    execute: (interaction: CommandInteraction) => void;
-}
 
 export interface Quote {
     content: string;
