@@ -34,9 +34,7 @@ export const setupFirebase = (fetchQuotes: () => Promise<Array<Quote>>) => {
     updateQuotesRef.on('value', async snapshot => {
         const shouldUpdate = snapshot.val();
         if (shouldUpdate) {
-            console.log('Update request received!');
             const quotes = await fetchQuotes();
-            console.log('Quotes: ', quotes);
             saveQuotesToDatabase(quotes);
             updateQuotesRef.set(false);
         }

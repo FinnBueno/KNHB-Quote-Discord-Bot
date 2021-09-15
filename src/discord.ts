@@ -34,7 +34,6 @@ export const startDiscordBot = (token: string): DiscordBot => {
             for await (const { channelId, name } of channels) {                
                 const channel = await bot.channels.fetch(channelId) as TextBasedChannels;
                 const messages = await getAllMessages(channel);
-                console.log(messages);
                 allMessages = [
                     ...allMessages,
                     ...messages.map(m => ({
