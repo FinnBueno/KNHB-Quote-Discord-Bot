@@ -1,0 +1,158 @@
+{
+	"name": "quote-reader",
+	"version": "1.0.0",
+	"description": "This program reads the quotes typed into discord and loads them into the Firebase database",
+	"main": "src/index.ts",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "npm run build && node ./dist",
+		"build": "tsc -p ."
+	},
+	"author": "Finn Bon",
+	"license": "ISC",
+	"eslintConfig": {
+		"extends": [
+			"plugin:@typescript-eslint/recommended"
+		],
+		"parser": "@typescript-eslint/parser",
+		"parserOptions": {
+			"ecmaVersion": 2018,
+			"sourceType": "module"
+		},
+		"env": {
+			"browser": true,
+			"jest": true
+		},
+		"ignorePatterns": [
+			"serviceWorker.ts"
+		],
+		"rules": {
+			"no-param-reassign": "off",
+			"@import/no-unresolved": "off",
+			"@typescript-eslint/camelcase": "off",
+			"@typescript-eslint/no-non-null-assertion": "off",
+			"@typescript-eslint/no-explicit-any": "off",
+			"@typescript-eslint/explicit-function-return-type": "off",
+			"@typescript-eslint/explicit-member-accessibility": [
+				"error",
+				{
+					"accessibility": "no-public"
+				}
+			],
+			"@typescript-eslint/indent": [
+				"error",
+				4
+			],
+			"@typescript-eslint/no-empty-function": "off",
+			"@typescript-eslint/no-var-requires": "off",
+			"@typescript-eslint/ban-types": [
+				"error",
+				{
+					"extendDefaults": true,
+					"types": {
+						"String": {
+							"message": "Use string instead",
+							"fixWith": "string"
+						},
+						"{}": false
+					}
+				}
+			],
+			"react/jsx-one-expression-per-line": "off",
+			"comma-dangle": "off",
+			"indent": "off",
+			"jsdoc/require-param": "off",
+			"no-unused-vars": [
+				"warn",
+				{
+					"args": "after-used",
+					"argsIgnorePattern": "_"
+				}
+			],
+			"@typescript-eslint/explicit-module-boundary-types": "off",
+			"@typescript-eslint/no-unused-vars": [
+				"warn",
+				{
+					"args": "after-used",
+					"argsIgnorePattern": "_"
+				}
+			],
+			"object-curly-newline": [
+				"error",
+				{
+					"ObjectExpression": {
+						"minProperties": 6,
+						"multiline": true,
+						"consistent": true
+					},
+					"ObjectPattern": {
+						"minProperties": 6,
+						"multiline": true,
+						"consistent": true
+					},
+					"ImportDeclaration": {
+						"minProperties": 6,
+						"multiline": true,
+						"consistent": true
+					},
+					"ExportDeclaration": {
+						"minProperties": 6,
+						"multiline": true,
+						"consistent": true
+					}
+				}
+			],
+			"react/destructuring-assignment": "off",
+			"react/prop-types": "off",
+			"valid-jsdoc": "off",
+			"import/prefer-default-export": "off",
+			"jsdoc/require-description-complete-sentence": "off"
+		},
+		"settings": {
+			"import/resolver": {
+				"node": {
+					"extensions": [
+						".js",
+						".json",
+						".ts",
+						".tsx",
+						".d.ts"
+					],
+					"moduleDirectory": [
+						"node_modules",
+						"src"
+					]
+				}
+			}
+		}
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"dependencies": {
+		"@discordjs/rest": "^0.1.0-canary.0",
+		"@types/firebase": "^3.2.1",
+		"discord-api-types": "^0.23.1",
+		"discord.js": "^13.1.0",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"firebase": "^9.0.2",
+		"firebase-admin": "^9.11.1",
+		"typescript": "^4.4.2"
+	},
+	"devDependencies": {
+		"concurrently": "^6.2.1",
+		"nodemon": "^2.0.12",
+		"ts-node": "^10.2.1"
+	}
+}
